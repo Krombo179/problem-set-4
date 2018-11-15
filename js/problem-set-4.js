@@ -157,7 +157,17 @@ function fluidOunces() {
   let fluidOunces = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 7 CODE HERE
+  let gallons = Math.floor(fluidOunces/128);
+  let extragallons = (fluidOunces%128);
+  let quarts = Math.floor(extragallons/32);
+  let extraquarts = (extragallons%32);
+  let pints = Math.floor(extraquarts/16);
+  let extrapints = (extraquarts%16);
+  let cups = Math.floor(extrapints/8.11537);
+  let extracups = (extrapints%8.11537)
+  fluidOunces = (extrapints);
+  let p = document.getElementById("output7")
+  p.innerHTML= `Gallons: ${gallons}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
@@ -181,7 +191,13 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 8 CODE HERE
+  let tons = Math.floor(ounces/32000);
+  let extratons = (ounces%32000);
+  let pounds = Math.floor(extratons/16);
+  let extrapounds = (extratons%16);
+  ounces = (extrapounds);
+  let p = document.getElementById("output8")
+  p.innerHTML= `Tons: ${tons}<br/>Pounds: ${pounds}<br/>Ounces: ${ounces}`;
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
@@ -205,7 +221,17 @@ function money() {
   let pennies = input; // DO NOT MODIFY
   /////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 9 CODE HERE
+  let dollars = Math.floor(pennies/100);
+  let extradollars = (pennies%100);
+  let quarters = Math.floor(extradollars/25);
+  let extraquarters = (extradollars%25);
+  let dimes = Math.floor(extraquarters/10);
+  let extradimes = (extraquarters%10);
+  let nickels = Math.floor(extradimes/5);
+  let extranickels = (extradimes%5);
+  pennies = (extradimes);
+  let p = document.getElementById("output9")
+  p.innerHTML= `Dollars: ${dollars}<br/>Quarters: ${quarters}<br/>Dimes: ${dimes}<br/>Nickels: ${nickels}<br/>Pennies: ${pennies}`;
 
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
@@ -219,7 +245,7 @@ function money() {
 function change() {
 
   ///////////////////////////////////////////////////////////////////// DO NOT MODIFY
-  let input = prompt("Enter a non-negative number less than 1.00."); // DO NOT MODIFY
+  let input = prompt("Enter a non-negative number less than 1.00 and has all leading zeroes but no dollar sign."); // DO NOT MODIFY
   ///////////////////////////////////////////////////////////////////// DO NOT MODIFY
 
   // You are free to modify the value of amount, which you'll likely
@@ -229,7 +255,18 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 10 CODE HERE
+  amount = amount * 100
+  let quarters = Math.floor(amount/25);
+  let extraquarters = (amount%25);
+  let dimes = Math.floor(extraquarters/10);
+  let extradimes = (extraquarters%10);
+  let nickels = Math.floor(extradimes/5);
+  let extranickels = (extradimes%5);
+  pennies = (extradimes);
+  amount = quarters + dimes + nickels + pennies
+  let coins = amount
+  let p = document.getElementById("output10")
+  p.innerHTML= `${amount} ${coins}`;
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
