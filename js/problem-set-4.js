@@ -255,15 +255,15 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  amount = amount * 100
+  amount = amount * 100;
   let quarters = Math.floor(amount/25);
   let quartersextra = (amount-(25*quarters));
   let dimes = Math.floor(quartersextra/10);
   let dimesextra = (quartersextra-(10*dimes));
   let nickels = Math.floor(dimesextra/5);
   let nickelsextra = (dimesextra-(5*nickels));
-  pennies = (nickelsextra);
-  amount = (quarters + dimes + nickels + pennies)to.fixed(0);
+  let pennies = (nickelsextra);
+  amount = (quarters + dimes + nickels + pennies).toFixed(0);
   let coins = amount;
   if (coins>1) {
     coins="coins."
