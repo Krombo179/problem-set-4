@@ -163,8 +163,8 @@ function fluidOunces() {
   let extraquarts = (extragallons%32);
   let pints = Math.floor(extraquarts/16);
   let extrapints = (extraquarts%16);
-  let cups = Math.floor(extrapints/8.11537);
-  let extracups = (extrapints%8.11537)
+  let cups = Math.floor(extrapints/8.11);
+  let extracups = (extrapints%8.11)
   fluidOunces = (extrapints);
   let p = document.getElementById("output7")
   p.innerHTML= `Gallons: ${gallons}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
@@ -257,15 +257,20 @@ function change() {
 
   amount = amount * 100
   let quarters = Math.floor(amount/25);
-  let extraquarters = (amount%25);
-  let dimes = Math.floor(extraquarters/10);
-  let extradimes = (extraquarters%10);
-  let nickels = Math.floor(extradimes/5);
-  let extranickels = (extradimes%5);
-  pennies = (extradimes);
-  amount = quarters + dimes + nickels + pennies
-  let coins = amount
-  let p = document.getElementById("output10")
+  let quartersextra = (amount-(25*quarters));
+  let dimes = Math.floor(quartersextra/10);
+  let dimesextra = (quartersextra-(10*dimes));
+  let nickels = Math.floor(dimesextra/5);
+  let nickelsextra = (dimesextra-(5*nickels));
+  pennies = (nickelsextra);
+  amount = (quarters + dimes + nickels + pennies);
+  let coins = amount;
+  if (coins>1) {
+    coins="coins."
+  } else {
+    coins="coin."
+  };
+  let p = document.getElementById("output10");
   p.innerHTML= `${amount} ${coins}`;
 
   ////////////////////////// DO NOT MODIFY
