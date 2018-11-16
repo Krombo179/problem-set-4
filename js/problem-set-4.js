@@ -163,9 +163,9 @@ function fluidOunces() {
   let extraquarts = (extragallons%32);
   let pints = Math.floor(extraquarts/16);
   let extrapints = (extraquarts%16);
-  let cups = Math.floor(extrapints/8.11);
-  let extracups = (extrapints%8.11)
-  fluidOunces = (extrapints);
+  let cups = Math.floor(extrapints/8);
+  let extracups = (extrapints%8)
+  fluidOunces = (extracups);
   let p = document.getElementById("output7")
   p.innerHTML= `Gallons: ${gallons}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
 
@@ -263,15 +263,15 @@ function change() {
   let nickels = Math.floor(dimesextra/5);
   let nickelsextra = (dimesextra-(5*nickels));
   let pennies = (nickelsextra);
-  amount = (quarters + dimes + nickels + pennies).toFixed(0);
-  let coins = amount;
+  let number = (quarters + dimes + nickels + pennies).toFixed(0);
+  let coins = number;
   if (coins>1) {
     coins="coins."
   } else {
     coins="coin."
   };
   let p = document.getElementById("output10");
-  p.innerHTML= `${amount} ${coins}`;
+  p.innerHTML= `${number} ${coins}`;
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
