@@ -262,8 +262,8 @@ function change() {
   let dimesextra = (quartersextra-(10*dimes));
   let nickels = Math.floor(dimesextra/5);
   let nickelsextra = (dimesextra-(5*nickels));
-  pennies = (nickelsextra);
-  amount = (quarters + dimes + nickels + pennies)to.fixed(0);
+  let pennies = (nickelsextra);
+  amount = (quarters + dimes + nickels + pennies).toFixed(0);
   let coins = amount;
   if (coins>1) {
     coins="coins."
