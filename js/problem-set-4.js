@@ -163,15 +163,15 @@ function fluidOunces() {
   let extraquarts = (extragallons%32);
   let pints = Math.floor(extraquarts/16);
   let extrapints = (extraquarts%16);
-  let cups = Math.floor(extrapints/8.11);
-  let extracups = (extrapints%8.11)
-  fluidOunces = (extrapints);
+  let cups = Math.floor(extrapints/8);
+  let extracups = (extrapints%8);
+  fluidOunces = extracups;
   let p = document.getElementById("output7")
   p.innerHTML= `Gallons: ${gallons}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
 
-  /////////////////////////////// DO NOT MODIFY
+  ////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
-  /////////////////////////////// DO NOT MODIFY
+  ////////////////////////// DO NOT MODIFY
 }
 
 /*
@@ -229,7 +229,7 @@ function money() {
   let extradimes = (extraquarters%10);
   let nickels = Math.floor(extradimes/5);
   let extranickels = (extradimes%5);
-  pennies = (extradimes);
+  pennies = (extranickels);
   let p = document.getElementById("output9")
   p.innerHTML= `Dollars: ${dollars}<br/>Quarters: ${quarters}<br/>Dimes: ${dimes}<br/>Nickels: ${nickels}<br/>Pennies: ${pennies}`;
 
@@ -255,7 +255,7 @@ function change() {
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  amount = amount * 100
+  amount = amount * 100;
   let quarters = Math.floor(amount/25);
   let quartersextra = (amount-(25*quarters));
   let dimes = Math.floor(quartersextra/10);
@@ -263,15 +263,20 @@ function change() {
   let nickels = Math.floor(dimesextra/5);
   let nickelsextra = (dimesextra-(5*nickels));
   let pennies = (nickelsextra);
+<<<<<<< HEAD
   amount = (quarters + dimes + nickels + pennies).toFixed(0);
   let coins = amount;
+=======
+  let number = (quarters + dimes + nickels + pennies).toFixed(0);
+  let coins = number;
+>>>>>>> 33e638d15dae162f5f7ed7e417507f5087bb1a59
   if (coins>1) {
     coins="coins."
   } else {
     coins="coin."
   };
   let p = document.getElementById("output10");
-  p.innerHTML= `${amount} ${coins}`;
+  p.innerHTML= `${number} ${coins}`;
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
